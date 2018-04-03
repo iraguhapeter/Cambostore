@@ -49,11 +49,22 @@ public class ProductDao {
         product4.setUnitStock(20);
         product4.setProductManufacturer("Samsung");
 
+        Product product5 = new Product();
+        product5.setProductName("Samsung Galaxy Edge");
+        product5.setProductCategory("Samsung");
+        product5.setProductDescription("This is the new Samsung Galaxy Edge");
+        product5.setProductPrice(1200);
+        product5.setProductCondition("New arrival");
+        product5.setProductStatus("Active");
+        product5.setUnitStock(20);
+        product5.setProductManufacturer("Samsung");
+
         productList = new ArrayList<Product>();
         productList.add(product1);
         productList.add(product2);
         productList.add(product3);
         productList.add(product4);
+        productList.add(product5);
 
         return productList;
     }
