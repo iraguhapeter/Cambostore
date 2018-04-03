@@ -2,6 +2,7 @@ package kh.com.cambostore.dao;
 
 import kh.com.cambostore.model.Product;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ public class ProductDao {
 
     public List<Product> getProductList() {
         Product product1 = new Product();
+        product1.setProductId("ID001");
         product1.setProductName("Iphone 7 plus");
         product1.setProductCategory("iPhone");
         product1.setProductDescription("This is the new iPhone 7 plus");
@@ -20,6 +22,7 @@ public class ProductDao {
         product1.setProductManufacturer("Apple");
 
         Product product2 = new Product();
+        product2.setProductId("ID002");
         product2.setProductName("Iphone 7 plus");
         product2.setProductCategory("iPhone");
         product2.setProductDescription("This is the new iPhone 7 plus");
@@ -30,6 +33,7 @@ public class ProductDao {
         product2.setProductManufacturer("Apple");
 
         Product product3 = new Product();
+        product3.setProductId("ID003");
         product3.setProductName("Samsung Galaxy Edge");
         product3.setProductCategory("Samsung");
         product3.setProductDescription("This is the new Samsung Galaxy Edge");
@@ -40,6 +44,7 @@ public class ProductDao {
         product3.setProductManufacturer("Samsung");
 
         Product product4 = new Product();
+        product4.setProductId("ID004");
         product4.setProductName("Samsung Galaxy Edge");
         product4.setProductCategory("Samsung");
         product4.setProductDescription("This is the new Samsung Galaxy Edge");
@@ -50,6 +55,7 @@ public class ProductDao {
         product4.setProductManufacturer("Samsung");
 
         Product product5 = new Product();
+        product5.setProductId("ID005");
         product5.setProductName("Samsung Galaxy Edge");
         product5.setProductCategory("Samsung");
         product5.setProductDescription("This is the new Samsung Galaxy Edge");
@@ -69,6 +75,12 @@ public class ProductDao {
         return productList;
     }
 
-
-
+    public Product getProductById(String productId) throws IOException{
+        for (Product product: getProductList()) {
+            if(product.getProductId().equals(productId)){
+                return product;
+            }
+        }
+        throw new IOException("No product found");
+    }
 }

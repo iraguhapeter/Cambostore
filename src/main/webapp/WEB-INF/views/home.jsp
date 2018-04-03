@@ -66,7 +66,7 @@
                 <td>${product.productCondition}</td>
                 <td>${product.productPrice}</td>
                 <td>
-                    <a href="<c:url value="/viewProduct"/>" >
+                    <a href="<c:url value="/viewProduct/${product.productId}"/>" >
                         <i class="fa fa-info" aria-hidden="true"></i>
                     </a>
                 </td>
